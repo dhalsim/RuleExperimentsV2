@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02DB9E77-8B6E-4165-BEE0-ED1D5162A915}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IocContainer.RuleExperiments.HaveBox</RootNamespace>
+    <AssemblyName>IocContainer.RuleExperiments.HaveBox</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HaveBox\Collections\Generics\HashTable.cs" />
+    <Compile Include="HaveBox\Collections\Generics\HashTableEnumerator.cs" />
+    <Compile Include="HaveBox\Collections\ITypeEnumerable.cs" />
+    <Compile Include="HaveBox\Collections\TypeEnumerable.cs" />
+    <Compile Include="HaveBox\Collections\TypeEnumerator.cs" />
+    <Compile Include="HaveBox\Configuration\Config.cs" />
+    <Compile Include="HaveBox\Configuration\IConfig.cs" />
+    <Compile Include="HaveBox\Configuration\IInjectionExpression.cs" />
+    <Compile Include="HaveBox\Configuration\IInjectionProperty.cs" />
+    <Compile Include="HaveBox\Configuration\InjectionExpression.cs" />
+    <Compile Include="HaveBox\Configuration\InjectionProperty.cs" />
+    <Compile Include="HaveBox\Configuration\ISingletonProperty.cs" />
+    <Compile Include="HaveBox\Configuration\SingletonProperty.cs" />
+    <Compile Include="HaveBox\Configuration\TypeDetails.cs" />
+    <Compile Include="HaveBox\Container.cs" />
+    <Compile Include="HaveBox\DelegateFactory.cs" />
+    <Compile Include="HaveBox\DependencyStrapper.cs" />
+    <Compile Include="HaveBox\DisposableContainer.cs" />
+    <Compile Include="HaveBox\HaveBoxProxyReduced\ClassProxyFactory.cs" />
+    <Compile Include="HaveBox\HaveBoxProxyReduced\IInterceptor.cs" />
+    <Compile Include="HaveBox\HaveBoxProxyReduced\IInvocation.cs" />
+    <Compile Include="HaveBox\IContainer.cs" />
+    <Compile Include="HaveBox\IDelegateFactory.cs" />
+    <Compile Include="HaveBox\IDependencyStrapper.cs" />
+    <Compile Include="HaveBox\IDisposableContainer.cs" />
+    <Compile Include="HaveBox\IEnumerableExtensions.cs" />
+    <Compile Include="HaveBox\IInstantiation.cs" />
+    <Compile Include="HaveBox\IInstantiationInterceptor.cs" />
+    <Compile Include="HaveBox\IKeyValue.cs" />
+    <Compile Include="HaveBox\Instantiation.cs" />
+    <Compile Include="HaveBox\SubConfigs\ConfigInjection.cs" />
+    <Compile Include="HaveBox\SubConfigs\SimpleScanner.cs" />
+    <Compile Include="Initializer.cs" />
+    <Compile Include="Interceptors\InvocationInterceptor.cs" />
+    <Compile Include="IocContainerImplementation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\Domain.RuleExperiments\Domain.RuleExperiments.csproj">
+      <Project>{b04c76ba-f586-405c-9109-0d4a8763e8ab}</Project>
+      <Name>Domain.RuleExperiments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Implementations\Application.RuleExperiments\Application.RuleExperiments.csproj">
+      <Project>{086bac48-0dee-43fc-a625-fcc36c2e07d9}</Project>
+      <Name>Application.RuleExperiments</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HaveBox\HaveBox.csproj" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

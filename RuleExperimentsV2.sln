@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{6C52D580-B8CB-48DF-9553-365889154E02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IocContainer.RuleExperiments.HaveBox", "Libraries\IocContainer.RuleExperiments.HaveBox\IocContainer.RuleExperiments.HaveBox.csproj", "{02DB9E77-8B6E-4165-BEE0-ED1D5162A915}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{77C1AB4A-EC25-47E7-A321-C7AAAF3B6F3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.RuleExperiments", "Domain\Domain.RuleExperiments\Domain.RuleExperiments.csproj", "{B04C76BA-F586-405C-9109-0D4A8763E8AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1028D781-DCE6-4B79-949A-6E08BCFFE291}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.RuleExperiments", "Tests\UnitTests.RuleExperiments\UnitTests.RuleExperiments.csproj", "{AA1EFB17-69AC-4F1E-A0CC-40C3A303AFDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{5278EE65-BBC8-4AD9-8D9D-027CB6029F3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.RuleExperiments", "Implementations\Application.RuleExperiments\Application.RuleExperiments.csproj", "{086BAC48-0DEE-43FC-A625-FCC36C2E07D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02DB9E77-8B6E-4165-BEE0-ED1D5162A915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02DB9E77-8B6E-4165-BEE0-ED1D5162A915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02DB9E77-8B6E-4165-BEE0-ED1D5162A915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02DB9E77-8B6E-4165-BEE0-ED1D5162A915}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B04C76BA-F586-405C-9109-0D4A8763E8AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B04C76BA-F586-405C-9109-0D4A8763E8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B04C76BA-F586-405C-9109-0D4A8763E8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B04C76BA-F586-405C-9109-0D4A8763E8AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA1EFB17-69AC-4F1E-A0CC-40C3A303AFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA1EFB17-69AC-4F1E-A0CC-40C3A303AFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA1EFB17-69AC-4F1E-A0CC-40C3A303AFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA1EFB17-69AC-4F1E-A0CC-40C3A303AFDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086BAC48-0DEE-43FC-A625-FCC36C2E07D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086BAC48-0DEE-43FC-A625-FCC36C2E07D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086BAC48-0DEE-43FC-A625-FCC36C2E07D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086BAC48-0DEE-43FC-A625-FCC36C2E07D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{02DB9E77-8B6E-4165-BEE0-ED1D5162A915} = {6C52D580-B8CB-48DF-9553-365889154E02}
+		{B04C76BA-F586-405C-9109-0D4A8763E8AB} = {77C1AB4A-EC25-47E7-A321-C7AAAF3B6F3C}
+		{AA1EFB17-69AC-4F1E-A0CC-40C3A303AFDE} = {1028D781-DCE6-4B79-949A-6E08BCFFE291}
+		{086BAC48-0DEE-43FC-A625-FCC36C2E07D9} = {5278EE65-BBC8-4AD9-8D9D-027CB6029F3C}
+	EndGlobalSection
+EndGlobal
