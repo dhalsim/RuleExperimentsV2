@@ -42,6 +42,7 @@
     <Compile Include="Attributes\BaseAttribute.cs" />
     <Compile Include="Attributes\CacheKeyAttribute.cs" />
     <Compile Include="Attributes\InvocationLogAttribute.cs" />
+    <Compile Include="Attributes\MethodDecoratorAttribute.cs" />
     <Compile Include="Attributes\Rule\FlowRule.cs" />
     <Compile Include="ImplementationTypes\LoggerTypes.cs" />
     <Compile Include="ImplementationTypes\RuleProviderTypes.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="Interfaces\IFlowLogger.cs" />
     <Compile Include="Interfaces\IIocContainer.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
+    <Compile Include="Interfaces\IMethodDecorator.cs" />
     <Compile Include="Interfaces\IRuleProvider.cs" />
     <Compile Include="IocContainerFactory.cs" />
     <Compile Include="Models\Flow\Flow.cs" />

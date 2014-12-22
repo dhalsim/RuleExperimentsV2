@@ -2,3 +2,4 @@ C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Domain\D
 C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Domain\Domain.RuleExperiments\bin\Debug\Domain.RuleExperiments.pdb
 C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Domain\Domain.RuleExperiments\obj\Debug\Domain.RuleExperiments.dll
 C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Domain\Domain.RuleExperiments\obj\Debug\Domain.RuleExperiments.pdb
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Domain\Domain.RuleExperiments\obj\Debug\Domain.RuleExperiments.csprojResolveAssemblyReference.cache

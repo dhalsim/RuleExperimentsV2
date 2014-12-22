@@ -14,10 +14,15 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1028D781-DCE6-4B79-949A-6E08BCFFE291}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.RuleExperiments", "Tests\UnitTests.RuleExperiments\UnitTests.RuleExperiments.csproj", "{AA1EFB17-69AC-4F1E-A0CC-40C3A303AFDE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{667F2DDE-6771-4E27-9B69-E884CAB33B75} = {667F2DDE-6771-4E27-9B69-E884CAB33B75}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{5278EE65-BBC8-4AD9-8D9D-027CB6029F3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.RuleExperiments", "Implementations\Application.RuleExperiments\Application.RuleExperiments.csproj", "{086BAC48-0DEE-43FC-A625-FCC36C2E07D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weavers", "Weavers\Weavers.csproj", "{667F2DDE-6771-4E27-9B69-E884CAB33B75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +46,10 @@ Global
 		{086BAC48-0DEE-43FC-A625-FCC36C2E07D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{086BAC48-0DEE-43FC-A625-FCC36C2E07D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{086BAC48-0DEE-43FC-A625-FCC36C2E07D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{667F2DDE-6771-4E27-9B69-E884CAB33B75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{667F2DDE-6771-4E27-9B69-E884CAB33B75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{667F2DDE-6771-4E27-9B69-E884CAB33B75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{667F2DDE-6771-4E27-9B69-E884CAB33B75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +59,6 @@ Global
 		{B04C76BA-F586-405C-9109-0D4A8763E8AB} = {77C1AB4A-EC25-47E7-A321-C7AAAF3B6F3C}
 		{AA1EFB17-69AC-4F1E-A0CC-40C3A303AFDE} = {1028D781-DCE6-4B79-949A-6E08BCFFE291}
 		{086BAC48-0DEE-43FC-A625-FCC36C2E07D9} = {5278EE65-BBC8-4AD9-8D9D-027CB6029F3C}
+		{667F2DDE-6771-4E27-9B69-E884CAB33B75} = {6C52D580-B8CB-48DF-9553-365889154E02}
 	EndGlobalSection
 EndGlobal

@@ -11,6 +11,7 @@
     <AssemblyName>UnitTests.RuleExperiments</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>ac5f3cb5</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,6 +31,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Mono.Cecil, Version=0.9.5.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>..\..\References\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>..\..\References\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>..\..\References\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
     <Reference Include="Moq">
       <HintPath>..\..\packages\Moq.4.2.1409.1722\lib\net40\Moq.dll</HintPath>
     </Reference>
@@ -47,6 +61,7 @@
   <ItemGroup>
     <Compile Include="AOP\FlowInterceptorFixture.cs" />
     <Compile Include="AOP\InvocationInterceptorFixture.cs" />
+    <Compile Include="AOP\ModuleWeaversFixture.cs" />
     <Compile Include="CacherTests\CacheManagerFixture.cs" />
     <Compile Include="CacherTests\MemoryCacherFixture.cs" />
     <Compile Include="IocContainerTests\ContainerFixture.cs" />
@@ -54,7 +69,9 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
@@ -71,8 +88,19 @@
       <Project>{02DB9E77-8B6E-4165-BEE0-ED1D5162A915}</Project>
       <Name>IocContainer.RuleExperiments.HaveBox</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Weavers\Weavers.csproj">
+      <Project>{667f2dde-6771-4e27-9b69-e884cab33b75}</Project>
+      <Name>Weavers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\Fody.1.26.4\build\Fody.targets" Condition="Exists('..\..\packages\Fody.1.26.4\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Fody.1.26.4\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Fody.1.26.4\build\Fody.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
