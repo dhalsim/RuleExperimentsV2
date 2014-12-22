@@ -3,7 +3,11 @@
 /Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/UnitTests.RuleExperiments.dll
 /Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/obj/Debug/UnitTests.RuleExperiments.dll
 /Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/obj/Debug/UnitTests.RuleExperiments.dll.mdb
+/Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/Mono.Cecil.Rocks.dll
 /Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/Moq.dll
+/Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/Mono.Cecil.dll
 /Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/nunit.framework.dll
 /Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/Domain.RuleExperiments.dll
 /Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/Domain.RuleExperiments.dll.mdb
@@ -11,3 +15,5 @@
 /Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/Application.RuleExperiments.dll.mdb
 /Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/IocContainer.RuleExperiments.HaveBox.dll
 /Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/IocContainer.RuleExperiments.HaveBox.dll.mdb
+/Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/Weavers.dll
+/Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/Weavers.dll.mdb
