@@ -1,0 +1,9 @@
+/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/bin/Debug/Weavers.dll.mdb
+/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/bin/Debug/Weavers.dll
+/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/obj/Debug/Weavers.dll
+/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/obj/Debug/Weavers.dll.mdb
+/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/bin/Debug/Mono.Cecil.Rocks.dll
+/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/bin/Debug/Mono.Cecil.dll
