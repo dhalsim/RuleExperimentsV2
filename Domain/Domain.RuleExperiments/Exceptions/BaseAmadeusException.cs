@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Domain.RuleExperiments.Exceptions
 {
+    [Serializable]
     public class BaseAmadeusException : Exception, IAmadeusException
     {
         public BaseAmadeusException()
@@ -15,6 +17,12 @@ namespace Domain.RuleExperiments.Exceptions
 
         public BaseAmadeusException(string message, Exception exception) : base(message, exception)
         {
+        }
+
+        public BaseAmadeusException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+
         }
 
         protected internal virtual string GetExceptionLog()

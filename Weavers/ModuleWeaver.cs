@@ -67,15 +67,16 @@ namespace Weavers
 
 		    var last = method.Body.Instructions.Last();
             Instruction tryEnd;
-            Instruction ret = il.Create(OpCodes.Ret);
+            Instruction @throw = il.Create(OpCodes.Throw);
 
             // this pattern lets you construct IL instructions without thinking reverse in stack
             il.InsertAfter(last, tryEnd = last = il.Create(OpCodes.Stloc_S, exceptionVariable));    // store exception variable to local
             il.InsertAfter(last, last = il.CreateLoadInstruction(exceptionMessage));                // load exception message string to the stack
-            il.InsertAfter(last, last = il.Create(OpCodes.Ldloc_0));                                // load exception variable from local
+            il.InsertAfter(last, last = il.Create(OpCodes.Ldloc_S, exceptionVariable));             // load exception variable from local
             il.InsertAfter(last, last = exceptionInstance);                                         // call constructor (uses these two variables from stack)
-            il.InsertAfter(last, last = il.Create(OpCodes.Throw));                                  // throw that exception
-            il.InsertAfter(last, last = il.Create(OpCodes.Leave, ret));                             // leave catch region and return void
+		    il.InsertAfter(last, last = @throw);                                                    // throw that exception
+            il.InsertAfter(last, last = il.Create(OpCodes.Leave, @throw));                          // leave catch region
+            il.InsertAfter(last, il.Create(OpCodes.Ret));                                           // return void
 
 			return new ExceptionHandler(ExceptionHandlerType.Catch) {
 				TryStart = method.Body.Instructions.First(),

@@ -4,36 +4,45 @@ using Domain.RuleExperiments.Exceptions;
 
 namespace Application.RuleExperiments.MethodDecoratorWeaverTestClasses
 {
+    public abstract class BaseTestClass : MarshalByRefObject
+    {
+        public abstract void Test();
+        public abstract bool Test2();
+    }
+
 	[MethodDecorator]
-	public class TestClass
+	public class TestClass : BaseTestClass
 	{
-		public void Test()
-		{
-            
-		}
+        [MethodDecorator]
+		public override void Test()
+        {
+            int b = 0;
+            int a = 10 / b;
+        }
+
+        [MethodDecorator]
+	    public override bool Test2()
+	    {
+            int b = 0;
+            int a = 10 / b;
+            return true;
+	    }
 	}
 
-	public class TestClass2
+	public class TestClass2 : BaseTestClass
 	{
 		[MethodDecorator]
-		public void Test()
+        public override void Test()
 		{
-			throw new Exception();
+            throw new Exception();
 		}
-	}
 
-    public class TestTarget
-    {
-        public void Test()
-        {
-            try
-            {
-                throw new Exception();
-            }
-            catch (Exception e)
-            {
-                throw new SystemLevelException("Error Occured", e);
-            }
-        }
-    }
+        [MethodDecorator]
+	    public override bool Test2()
+	    {
+            int b = 0;
+            int a = 10 / b;
+            return true;
+	    }
+	}
 }

@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using System.Reflection;
 using Domain.RuleExperiments.Exceptions;
 using Mono.Cecil;
 using NUnit.Framework;
 using Weavers;
-using Mono.Cecil.Cil;
 using System;
-using Application.RuleExperiments.MethodDecoratorWeaverTestClasses;
 
 namespace UnitTests.RuleExperiments.AOP
 {
@@ -20,6 +17,7 @@ namespace UnitTests.RuleExperiments.AOP
 	    readonly string _upDirectory = Path.Combine("..", "..", "..", "..");
 		private const string DllName = "Application.RuleExperiments.dll";
 		private string _fullPath;
+	    private AppDomain _tempDomain;
 
 		[TestFixtureSetUp]
 		public void Setup()
@@ -73,25 +71,42 @@ namespace UnitTests.RuleExperiments.AOP
 		{
             const string exceptionMessage = "System Level Exception Occureed.";
 
-            var method = _moduleWeaver.GetMethodsWithDecoratorAttributeOfType()[0];
-            var exceptionHandler = _moduleWeaver.CreateTryCatchBlock<SystemLevelException>(method, exceptionMessage);
-            method.Body.ExceptionHandlers.Add(exceptionHandler);
-            _moduleWeaver.ModuleDefinition.Import(method);
-            var instanceOfMyType = WriteAssemblyAndReadType();
+            foreach (var method in _moduleWeaver.GetMethodsWithDecoratorAttributeOfType())
+            {
+                string methodName = method.Name;
+		        var exceptionHandler = _moduleWeaver.CreateTryCatchBlock<SystemLevelException>(method, exceptionMessage);
+                method.Body.ExceptionHandlers.Add(exceptionHandler);
+                _moduleWeaver.ModuleDefinition.Import(method);
+                var instanceOfMyType = WriteAssemblyAndReadType(method);
 
-		    var exception = Assert.Throws<SystemLevelException>(() => instanceOfMyType.Test());
-		    Assert.AreEqual(exception.Message, exceptionMessage);
+                var exception = Assert.Throws<SystemLevelException>(() =>
+                {
+                    if (methodName == "Test")
+                    {
+                        instanceOfMyType.Test();
+                    }
+                    else
+                    {
+                        instanceOfMyType.Test2();
+                    }
+                });
+
+		        Assert.AreEqual(exception.Message, exceptionMessage);
+		    }
 		}
 
-	    private dynamic WriteAssemblyAndReadType()
+	    private dynamic WriteAssemblyAndReadType(MethodDefinition method)
 	    {
-	        string newAssemblyPath = DllName.Replace(".dll", "2.dll");
+	        if (_tempDomain != null)
+                AppDomain.Unload(_tempDomain);
+            
+            string newAssemblyPath = DllName.Replace(".dll", "2.dll");
 	        string fullPath = Path.Combine(Directory.GetCurrentDirectory(), newAssemblyPath);
 	        _moduleWeaver.ModuleDefinition.Assembly.Write(fullPath, new WriterParameters {WriteSymbols = true});
 
-	        var assembly = Assembly.LoadFrom(fullPath);
-	        Type type = assembly.GetType(typeof (TestClass2).FullName);
-	        var instanceOfMyType = (dynamic) Activator.CreateInstance(type);
+            _tempDomain = AppDomain.CreateDomain("myAppDomain", null, new AppDomainSetup { ApplicationBase = Directory.GetCurrentDirectory() });
+            var instanceOfMyType = (dynamic)_tempDomain.CreateInstanceFromAndUnwrap(fullPath, method.DeclaringType.FullName);
+            
 	        return instanceOfMyType;
 	    }
 	}
