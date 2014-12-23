@@ -44,6 +44,10 @@
     <Compile Include="Attributes\InvocationLogAttribute.cs" />
     <Compile Include="Attributes\MethodDecoratorAttribute.cs" />
     <Compile Include="Attributes\Rule\FlowRule.cs" />
+    <Compile Include="Exceptions\BaseAmadeusException.cs" />
+    <Compile Include="Exceptions\IAmadeusException.cs" />
+    <Compile Include="Exceptions\SystemLevelException.cs" />
+    <Compile Include="Exceptions\UserLevelException.cs" />
     <Compile Include="ImplementationTypes\LoggerTypes.cs" />
     <Compile Include="ImplementationTypes\RuleProviderTypes.cs" />
     <Compile Include="ImplementationTypes\SearchFlightTypes.cs" />

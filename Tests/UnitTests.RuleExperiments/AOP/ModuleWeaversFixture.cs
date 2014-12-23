@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using Domain.RuleExperiments.Exceptions;
 using Mono.Cecil;
 using NUnit.Framework;
 using Weavers;
@@ -15,8 +17,8 @@ namespace UnitTests.RuleExperiments.AOP
 	{
 		private ModuleWeaver _moduleWeaver;
 		private string _directory;
-		string _upDirectory = Path.Combine("..", "..", "..", "..");
-		private const string dllName = "Application.RuleExperiments.dll";
+	    readonly string _upDirectory = Path.Combine("..", "..", "..", "..");
+		private const string DllName = "Application.RuleExperiments.dll";
 		private string _fullPath;
 
 		[TestFixtureSetUp]
@@ -28,7 +30,7 @@ namespace UnitTests.RuleExperiments.AOP
 			_directory = Path.Combine(Directory.GetCurrentDirectory(), _upDirectory, "Implementations", 
 				"Application.RuleExperiments", "bin", "Debug");
 			assemblyResolver.AddSearchDirectory(_directory);
-			_fullPath = Path.Combine(_directory, dllName);
+			_fullPath = Path.Combine(_directory, DllName);
 
 			_moduleWeaver.ModuleDefinition = ModuleDefinition.ReadModule(_fullPath, new ReaderParameters {
 				AssemblyResolver = assemblyResolver,
@@ -69,29 +71,28 @@ namespace UnitTests.RuleExperiments.AOP
 		[Test]
 		public void Should_surround_method_with_try()
 		{
-			var method = _moduleWeaver.GetMethodsWithDecoratorAttributeOfType()[0];
-			var il = method.Body.GetILProcessor();
+            const string exceptionMessage = "System Level Exception Occureed.";
 
-			//Obtain the class type through reflection
-			//Then import it to the target module
-			var reflectionType = typeof(NotSupportedException);
-			var exceptionCtor = reflectionType.GetConstructor(new Type[]{ });
+            var method = _moduleWeaver.GetMethodsWithDecoratorAttributeOfType()[0];
+            var exceptionHandler = _moduleWeaver.CreateTryCatchBlock<SystemLevelException>(method, exceptionMessage);
+            method.Body.ExceptionHandlers.Add(exceptionHandler);
+            _moduleWeaver.ModuleDefinition.Import(method);
+            var instanceOfMyType = WriteAssemblyAndReadType();
 
-			var constructorReference = _moduleWeaver.ModuleDefinition.Import(exceptionCtor);
-			var exceptionInstance = il.Create(OpCodes.Newobj, constructorReference);
-
-			var exceptionHandler = _moduleWeaver.CreateTryCatchFinallyBlock(method, exceptionInstance);
-
-			Assert.IsNotNull(exceptionHandler);
-
-			method.Body.ExceptionHandlers.Add(exceptionHandler);
-
-			_moduleWeaver.ModuleDefinition.Import(method);
-			string fullPath = Path.Combine(Directory.GetCurrentDirectory(), dllName);
-			_moduleWeaver.ModuleDefinition.Assembly.Write(fullPath, new WriterParameters{ WriteSymbols = true });
-
-			TestClass2 testClass = new TestClass2();
-			Assert.Throws<NotSupportedException>(testClass.Test);
+		    var exception = Assert.Throws<SystemLevelException>(() => instanceOfMyType.Test());
+		    Assert.AreEqual(exception.Message, exceptionMessage);
 		}
+
+	    private dynamic WriteAssemblyAndReadType()
+	    {
+	        string newAssemblyPath = DllName.Replace(".dll", "2.dll");
+	        string fullPath = Path.Combine(Directory.GetCurrentDirectory(), newAssemblyPath);
+	        _moduleWeaver.ModuleDefinition.Assembly.Write(fullPath, new WriterParameters {WriteSymbols = true});
+
+	        var assembly = Assembly.LoadFrom(fullPath);
+	        Type type = assembly.GetType(typeof (TestClass2).FullName);
+	        var instanceOfMyType = (dynamic) Activator.CreateInstance(type);
+	        return instanceOfMyType;
+	    }
 	}
 }

@@ -15,4 +15,14 @@ C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\
 C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\bin\Debug\Weavers.pdb
 C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\obj\Debug\Weavers.dll
 C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\obj\Debug\Weavers.pdb
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\bin\Debug\Mono.Cecil.dll
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\bin\Debug\Mono.Cecil.Rocks.dll
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\bin\Debug\Mono.Cecil.Mdb.pdb
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\bin\Debug\Mono.Cecil.Pdb.pdb
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\bin\Debug\Mono.Cecil.Rocks.pdb
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\bin\Debug\Mono.Cecil.pdb
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\bin\Debug\Domain.RuleExperiments.dll
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\bin\Debug\Domain.RuleExperiments.pdb
 C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Weavers\obj\Debug\Weavers.csprojResolveAssemblyReference.cache

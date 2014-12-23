@@ -1,5 +1,6 @@
 ﻿using Domain.RuleExperiments.Attributes;
 using System;
+using Domain.RuleExperiments.Exceptions;
 
 namespace Application.RuleExperiments.MethodDecoratorWeaverTestClasses
 {
@@ -20,4 +21,19 @@ namespace Application.RuleExperiments.MethodDecoratorWeaverTestClasses
 			throw new Exception();
 		}
 	}
+
+    public class TestTarget
+    {
+        public void Test()
+        {
+            try
+            {
+                throw new Exception();
+            }
+            catch (Exception e)
+            {
+                throw new SystemLevelException("Error Occured", e);
+            }
+        }
+    }
 }
