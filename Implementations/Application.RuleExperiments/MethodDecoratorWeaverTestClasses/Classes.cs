@@ -10,17 +10,17 @@ namespace Application.RuleExperiments.MethodDecoratorWeaverTestClasses
         public abstract bool Test2();
     }
 
-	[MethodDecorator]
+	[TryCatchDecorator]
 	public class TestClass : BaseTestClass
 	{
-        [MethodDecorator]
+        [TryCatchDecorator]
 		public override void Test()
         {
             int b = 0;
             int a = 10 / b;
         }
 
-        [MethodDecorator]
+        [TryCatchDecorator]
 	    public override bool Test2()
 	    {
             int b = 0;
@@ -31,13 +31,13 @@ namespace Application.RuleExperiments.MethodDecoratorWeaverTestClasses
 
 	public class TestClass2 : BaseTestClass
 	{
-		[MethodDecorator]
+		[TryCatchDecorator]
         public override void Test()
 		{
             throw new Exception();
 		}
 
-        [MethodDecorator]
+        [TryCatchDecorator]
 	    public override bool Test2()
 	    {
             int b = 0;
@@ -45,4 +45,19 @@ namespace Application.RuleExperiments.MethodDecoratorWeaverTestClasses
             return true;
 	    }
 	}
+
+    public class TestClass3 : BaseTestClass
+    {
+        [LoggerDecorator]
+        public override void Test()
+        {
+            
+        }
+
+        [LoggerDecorator]
+        public override bool Test2()
+        {
+            return true;
+        }
+    }
 }

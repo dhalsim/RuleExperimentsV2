@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Domain.RuleExperiments.Attributes;
 using Domain.RuleExperiments.Exceptions;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
@@ -27,18 +28,18 @@ namespace Weavers
             
 		}
 
-		public List<TypeDefinition> GetTypesWithDecoratorAttribute()
+		public List<TypeDefinition> GetTypesWithDecoratorAttribute<T>() where T : BaseAttribute
 		{
-			const string decoratorType = "MethodDecoratorAttribute";
+            string decoratorType = typeof(T).Name;
 
 			return ModuleDefinition.Types
                 .Where(t => t.CustomAttributes.Any(ca => ca.AttributeType.Name == decoratorType))
                 .ToList();
 		}
 
-		public List<MethodDefinition> GetMethodsWithDecoratorAttributeOfType()
+		public List<MethodDefinition> GetMethodsWithDecoratorAttributeOfType<T>()
 		{
-			const string decoratorType = "MethodDecoratorAttribute";
+			string decoratorType = typeof(T).Name;
 
 			return 
                 (from definitionType in ModuleDefinition.Types

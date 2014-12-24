@@ -42,7 +42,8 @@
     <Compile Include="Attributes\BaseAttribute.cs" />
     <Compile Include="Attributes\CacheKeyAttribute.cs" />
     <Compile Include="Attributes\InvocationLogAttribute.cs" />
-    <Compile Include="Attributes\MethodDecoratorAttribute.cs" />
+    <Compile Include="Attributes\LoggerDecoratorAttribute.cs" />
+    <Compile Include="Attributes\TryCatchDecoratorAttribute.cs" />
     <Compile Include="Attributes\Rule\FlowRule.cs" />
     <Compile Include="Exceptions\BaseAmadeusException.cs" />
     <Compile Include="Exceptions\IAmadeusException.cs" />

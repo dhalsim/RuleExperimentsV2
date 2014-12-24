@@ -1,7 +1,6 @@
 ﻿using Application.RuleExperiments.Cachers;
 using Domain.RuleExperiments.Attributes;
 using NUnit.Framework;
-using UnitTests.RuleExperiments.Annotations;
 
 namespace UnitTests.RuleExperiments.CacherTests
 {

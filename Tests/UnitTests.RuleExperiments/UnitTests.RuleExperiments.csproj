@@ -58,9 +58,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AOP\BaseAOPFixture.cs" />
     <Compile Include="AOP\FlowInterceptorFixture.cs" />
     <Compile Include="AOP\InvocationInterceptorFixture.cs" />
-    <Compile Include="AOP\ModuleWeaversFixture.cs" />
+    <Compile Include="AOP\LoggerWeaverFixture.cs" />
+    <Compile Include="AOP\TryCatchWeaverFixture.cs" />
     <Compile Include="CacherTests\CacheManagerFixture.cs" />
     <Compile Include="CacherTests\MemoryCacherFixture.cs" />
     <Compile Include="IocContainerTests\ContainerFixture.cs" />
