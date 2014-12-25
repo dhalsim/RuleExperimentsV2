@@ -17,3 +17,5 @@
 /Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/IocContainer.RuleExperiments.HaveBox.dll.mdb
 /Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/Weavers.dll
 /Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/Weavers.dll.mdb
+/Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/StateMachine.dll
+/Users/barisaydek/Projects/RuleExperimentsV2/Tests/UnitTests.RuleExperiments/bin/Debug/StateMachine.dll.mdb
