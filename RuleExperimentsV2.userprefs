@@ -1,14 +1,9 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Domain/Domain.RuleExperiments/Models/Flow/Flow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tests/UnitTests.RuleExperiments/StateMachineTests/StateMachineFixture.cs">
     <Files>
-      <File FileName="Tests/UnitTests.RuleExperiments/AOP/FlowInterceptorFixture.cs" Line="1" Column="1" />
-      <File FileName="Tests/UnitTests.RuleExperiments/LoggerTests/StaticFlowLoggerFixture.cs" Line="37" Column="37" />
-      <File FileName="Tests/UnitTests.RuleExperiments/AOP/InvocationInterceptorFixture.cs" Line="1" Column="1" />
-      <File FileName="Libraries/IocContainer.RuleExperiments.HaveBox/Initializer.cs" Line="5" Column="5" />
-      <File FileName="Implementations/Application.RuleExperiments/FlowLoggers/StaticFlowLogger.cs" Line="22" Column="22" />
-      <File FileName="Domain/Domain.RuleExperiments/Models/Flow/FlowLogs.cs" Line="5" Column="5" />
-      <File FileName="Domain/Domain.RuleExperiments/Models/Flow/Flow.cs" Line="17" Column="17" />
+      <File FileName="Tests/UnitTests.RuleExperiments/StateMachineTests/StateMachineFixture.cs" Line="16" Column="16" />
+      <File FileName="Libraries/StateMachine/BaseStateMachine.cs" Line="9" Column="9" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.NUnit.TestPad">
@@ -17,11 +12,9 @@
             <Node name="UnitTests.RuleExperiments" expanded="True">
               <Node name="UnitTests" expanded="True">
                 <Node name="RuleExperiments" expanded="True">
-                  <Node name="AOP" expanded="True">
-                    <Node name="FlowInterceptorFixture" expanded="True" />
-                  </Node>
-                  <Node name="IocContainerTests" expanded="True">
-                    <Node name="ContainerFixture" expanded="True" />
+                  <Node name="AOP" expanded="True" />
+                  <Node name="StateMachineTests" expanded="True">
+                    <Node name="StateMachineFixture" selected="True" />
                   </Node>
                 </Node>
               </Node>
@@ -32,7 +25,9 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/ModuleWeaver.cs" line="52" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

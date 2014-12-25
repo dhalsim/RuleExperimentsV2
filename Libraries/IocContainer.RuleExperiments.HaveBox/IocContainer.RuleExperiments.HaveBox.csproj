@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -82,11 +82,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\Domain.RuleExperiments\Domain.RuleExperiments.csproj">
-      <Project>{b04c76ba-f586-405c-9109-0d4a8763e8ab}</Project>
+      <Project>{B04C76BA-F586-405C-9109-0D4A8763E8AB}</Project>
       <Name>Domain.RuleExperiments</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Implementations\Application.RuleExperiments\Application.RuleExperiments.csproj">
-      <Project>{086bac48-0dee-43fc-a625-fcc36c2e07d9}</Project>
+      <Project>{086BAC48-0DEE-43FC-A625-FCC36C2E07D9}</Project>
       <Name>Application.RuleExperiments</Name>
     </ProjectReference>
   </ItemGroup>

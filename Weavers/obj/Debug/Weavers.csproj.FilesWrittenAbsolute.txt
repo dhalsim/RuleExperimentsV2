@@ -7,3 +7,5 @@
 /Users/barisaydek/Projects/RuleExperimentsV2/Weavers/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/barisaydek/Projects/RuleExperimentsV2/Weavers/bin/Debug/Mono.Cecil.Rocks.dll
 /Users/barisaydek/Projects/RuleExperimentsV2/Weavers/bin/Debug/Mono.Cecil.dll
+/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/bin/Debug/Domain.RuleExperiments.dll
+/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/bin/Debug/Domain.RuleExperiments.dll.mdb
