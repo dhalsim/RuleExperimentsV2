@@ -14,7 +14,7 @@ namespace UnitTests.RuleExperiments.StateMachineTests
 
 			Assert.IsNotNull(stateMachine);
 			Assert.AreEqual(stateMachine.CurrentState, null);
-			Assert.AreEqual(0, stateMachine.History.Count);
+            Assert.AreEqual(0, stateMachine.History.Count);
 		}
 
 		[Test]
@@ -32,8 +32,8 @@ namespace UnitTests.RuleExperiments.StateMachineTests
 			Assert.IsTrue(start.To.Contains(search));
 			Assert.IsTrue(search.From.Contains(start));
 			Assert.AreEqual(stateMachine.CurrentState, start);
-			Assert.AreEqual(1, stateMachine.History.Count);
-			Assert.AreEqual("Start", stateMachine.History[0].State.Name);
+            Assert.AreEqual(1, stateMachine.History.Count);
+            Assert.AreEqual("Start", stateMachine.History[0].State.Name);
 		}
 
 		[Test]
@@ -53,9 +53,9 @@ namespace UnitTests.RuleExperiments.StateMachineTests
 			Assert.IsTrue(search.From.Contains(start));
 			Assert.AreEqual(stateMachine.CurrentState, search);
 
-			Assert.AreEqual(2, stateMachine.History.Count);
-			Assert.AreEqual("Start", stateMachine.History[0].State.Name);
-			Assert.AreEqual("Search", stateMachine.History[1].State.Name);
+            Assert.AreEqual(2, stateMachine.History.Count);
+            Assert.AreEqual("Start", stateMachine.History[0].State.Name);
+            Assert.AreEqual("Search", stateMachine.History[1].State.Name);
 		}
 	}
 }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using StateMachine;
-using System.Security.Cryptography;
 
 namespace StateMachine
 {
@@ -41,9 +39,9 @@ namespace StateMachine
         }
     }
 
-    public interface IStateMachine : IStartStateAddable
+    public interface IStateMachine : IStartStateAddable, IGetCurrentState
     {
-
+        StateHistory History { get; }
     }
 
     public interface IGetCurrentState
@@ -66,7 +64,7 @@ namespace StateMachine
         IUsableState Start();
     }
 
-    public interface IUsableState : IGetCurrentState
+    public interface IUsableState : IStateMachine
     {
         IUsableState NextState(string stateName);
     }
@@ -97,12 +95,12 @@ namespace StateMachine
 
         public State CurrentState { get; private set; }
 
-        public StateHistory StateHistory { get; set; }
+        public StateHistory History { get; private set; }
 
         protected BaseStateMachine()
         {
             States = new States();
-            StateHistory = new StateHistory();
+            History = new StateHistory();
         }
 
         public IInitializableState AddState(State state)
@@ -114,14 +112,14 @@ namespace StateMachine
         public IUsableState NextState(string stateName)
         {
             var state = States.Find(s => s.Name == stateName);
-            StateHistory.Add(new StateLog(state));
+            History.Add(new StateLog(state));
             CurrentState = state;
             return this;
         }
 
         public IUsableState Start()
         {
-            StateHistory.Add(new StateLog(StartState));
+            History.Add(new StateLog(StartState));
             CurrentState = StartState;
             return this;
         }

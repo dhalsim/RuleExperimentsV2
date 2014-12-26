@@ -24,3 +24,4 @@ C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Tests\Un
 C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Tests\UnitTests.RuleExperiments\obj\Debug\UnitTests.RuleExperiments.dll
 C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Tests\UnitTests.RuleExperiments\obj\Debug\UnitTests.RuleExperiments.pdb
 C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Tests\UnitTests.RuleExperiments\bin\Debug\StateMachine.dll
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Tests\UnitTests.RuleExperiments\bin\Debug\StateMachine.pdb

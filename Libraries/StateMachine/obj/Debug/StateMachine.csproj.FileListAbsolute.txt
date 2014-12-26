@@ -1,0 +1,4 @@
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Libraries\StateMachine\bin\Debug\StateMachine.dll
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Libraries\StateMachine\bin\Debug\StateMachine.pdb
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Libraries\StateMachine\obj\Debug\StateMachine.dll
+C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Libraries\StateMachine\obj\Debug\StateMachine.pdb
