@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="Cachers\CacheManager.cs" />
     <Compile Include="Cachers\MemoryCacher.cs" />
-    <Compile Include="FlowLoggers\StaticFlowLogger.cs" />
     <Compile Include="Loggers\StaticLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RuleProviders\BasicRuleProvider.cs" />
