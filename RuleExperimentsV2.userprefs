@@ -1,9 +1,10 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tests/UnitTests.RuleExperiments/StateMachineTests/StateMachineFixture.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tests/UnitTests.RuleExperiments/AOP/BaseAOPFixture.cs">
     <Files>
-      <File FileName="Tests/UnitTests.RuleExperiments/StateMachineTests/StateMachineFixture.cs" Line="16" Column="16" />
-      <File FileName="Libraries/StateMachine/BaseStateMachine.cs" Line="9" Column="9" />
+      <File FileName="Tests/UnitTests.RuleExperiments/StateMachineTests/StateMachineFixture.cs" Line="45" Column="45" />
+      <File FileName="Libraries/StateMachine/BaseStateMachine.cs" Line="32" Column="32" />
+      <File FileName="Tests/UnitTests.RuleExperiments/AOP/BaseAOPFixture.cs" Line="15" Column="15" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.NUnit.TestPad">
@@ -12,9 +13,11 @@
             <Node name="UnitTests.RuleExperiments" expanded="True">
               <Node name="UnitTests" expanded="True">
                 <Node name="RuleExperiments" expanded="True">
-                  <Node name="AOP" expanded="True" />
+                  <Node name="AOP" expanded="True">
+                    <Node name="BaseAOPFixture" selected="True" />
+                  </Node>
                   <Node name="StateMachineTests" expanded="True">
-                    <Node name="StateMachineFixture" selected="True" />
+                    <Node name="StateMachineFixture" expanded="True" />
                   </Node>
                 </Node>
               </Node>
