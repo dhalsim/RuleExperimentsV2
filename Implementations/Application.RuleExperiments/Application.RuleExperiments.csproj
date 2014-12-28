@@ -47,11 +47,16 @@
     <Compile Include="RuleProviders\BasicRuleProvider.cs" />
     <Compile Include="RuleProviders\StaticRuleProvider.cs" />
     <Compile Include="MethodDecoratorWeaverTestClasses\Classes.cs" />
+    <Compile Include="Application\Flight\Flight.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\Domain.RuleExperiments\Domain.RuleExperiments.csproj">
       <Project>{B04C76BA-F586-405C-9109-0D4A8763E8AB}</Project>
       <Name>Domain.RuleExperiments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\StateMachine\StateMachine.csproj">
+      <Project>{607503E5-64A9-46CA-B403-9B7FB6427CB8}</Project>
+      <Name>StateMachine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -62,4 +67,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="Application\" />
+    <Folder Include="Application\Flight\" />
+  </ItemGroup>
 </Project>

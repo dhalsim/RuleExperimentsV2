@@ -1,5 +1,0 @@
-/Users/barisaydek/Projects/RuleExperimentsV2/Libraries/StateMachine/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/Users/barisaydek/Projects/RuleExperimentsV2/Libraries/StateMachine/bin/Debug/StateMachine.dll.mdb
-/Users/barisaydek/Projects/RuleExperimentsV2/Libraries/StateMachine/bin/Debug/StateMachine.dll
-/Users/barisaydek/Projects/RuleExperimentsV2/Libraries/StateMachine/obj/Debug/StateMachine.dll
-/Users/barisaydek/Projects/RuleExperimentsV2/Libraries/StateMachine/obj/Debug/StateMachine.dll.mdb

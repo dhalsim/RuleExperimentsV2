@@ -1,9 +1,0 @@
-C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Libraries\IocContainer.RuleExperiments.HaveBox\bin\Debug\IocContainer.RuleExperiments.HaveBox.dll
-C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Libraries\IocContainer.RuleExperiments.HaveBox\bin\Debug\IocContainer.RuleExperiments.HaveBox.pdb
-C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Libraries\IocContainer.RuleExperiments.HaveBox\bin\Debug\Application.RuleExperiments.dll
-C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Libraries\IocContainer.RuleExperiments.HaveBox\bin\Debug\Domain.RuleExperiments.dll
-C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Libraries\IocContainer.RuleExperiments.HaveBox\bin\Debug\Domain.RuleExperiments.pdb
-C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Libraries\IocContainer.RuleExperiments.HaveBox\bin\Debug\Application.RuleExperiments.pdb
-C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Libraries\IocContainer.RuleExperiments.HaveBox\obj\Debug\IocContainer.RuleExperiments.HaveBox.csprojResolveAssemblyReference.cache
-C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Libraries\IocContainer.RuleExperiments.HaveBox\obj\Debug\IocContainer.RuleExperiments.HaveBox.dll
-C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Libraries\IocContainer.RuleExperiments.HaveBox\obj\Debug\IocContainer.RuleExperiments.HaveBox.pdb

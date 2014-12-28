@@ -1,5 +1,0 @@
-/Users/barisaydek/Projects/RuleExperimentsV2/Domain/Domain.RuleExperiments/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/Users/barisaydek/Projects/RuleExperimentsV2/Domain/Domain.RuleExperiments/bin/Debug/Domain.RuleExperiments.dll.mdb
-/Users/barisaydek/Projects/RuleExperimentsV2/Domain/Domain.RuleExperiments/bin/Debug/Domain.RuleExperiments.dll
-/Users/barisaydek/Projects/RuleExperimentsV2/Domain/Domain.RuleExperiments/obj/Debug/Domain.RuleExperiments.dll
-/Users/barisaydek/Projects/RuleExperimentsV2/Domain/Domain.RuleExperiments/obj/Debug/Domain.RuleExperiments.dll.mdb
