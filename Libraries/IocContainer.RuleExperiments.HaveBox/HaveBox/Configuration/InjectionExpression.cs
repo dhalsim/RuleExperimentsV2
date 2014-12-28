@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using IocContainer.RuleExperiments.HaveBox;
 
 namespace HaveBox.Configuration
 {
@@ -27,7 +29,7 @@ namespace HaveBox.Configuration
             {
                 typeDetails = CreateTypeDetails();
                 typeDetails.ImplementType = type;
-                typeDetails.DependenciesTypeDetails = new TypeDetails[typeDetails.ImplementType.GetConstructors().First().GetParameters().Count()];
+                typeDetails.DependenciesTypeDetails = new TypeDetails[typeDetails.ImplementType.GetAllConstructors().First().GetParameters().Count()];
 
                 _types.Add(typeDetails);
             }
@@ -56,7 +58,9 @@ namespace HaveBox.Configuration
 
         private static void CheckForMoreThanOneConstructorOnType(Type type)
         {
-            if (type.GetConstructors().Count() != 1)
+            int constructorCount = type.GetAllConstructors().Count();
+
+            if (constructorCount != 1)
             {
                 throw new NotSupportedException(
                     string.Format("Resolving for multiple {0} constructors, is not supported",

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using IocContainer.RuleExperiments.HaveBox;
 
 namespace HaveBox
 {
@@ -115,7 +116,7 @@ namespace HaveBox
             var method = new DynamicMethod("CreateInstance" + typeDetails.ImplementType.Name, MethodAttributes.Public | MethodAttributes.Static, CallingConventions.Standard, typeof(void), new[] { typeof(TypeDetails), typeof(object).MakeByRefType() }, typeof(TypeDetails), true);
 #endif
             var ilGenerator = method.GetILGenerator();
-            var parameters = typeDetails.ImplementType.GetConstructors().First().GetParameters();
+            var parameters = typeDetails.ImplementType.GetAllConstructors().First().GetParameters();
 
             var instances = new Queue<LocalBuilder>();
             var index = 0;
@@ -177,7 +178,7 @@ namespace HaveBox
                 index++;
             });
 
-            ilGenerator.Emit(OpCodes.Newobj, typeDetails.ImplementType.GetConstructors().First());
+            ilGenerator.Emit(OpCodes.Newobj, typeDetails.ImplementType.GetAllConstructors().First());
             ilGenerator.Emit(OpCodes.Stind_Ref);
             ilGenerator.Emit(OpCodes.Ret);
             return (CreateInstance) method.CreateDelegate(typeof (CreateInstance));
