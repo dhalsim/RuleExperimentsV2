@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using IocContainer.RuleExperiments.HaveBox;
 
 namespace HaveBox
 {
@@ -71,7 +72,7 @@ namespace HaveBox
 
         private void DependencyCreateInstanceResolver(TypeDetails typeDetails, IDictionary<Type, IList<TypeDetails>> dependencyMap)
         {
-            var constructorParameters = typeDetails.ImplementType.GetConstructors().First().GetParameters();
+            var constructorParameters = typeDetails.ImplementType.GetAllConstructors().First().GetParameters();
 
             int index = 0;
             constructorParameters.Each(x =>
