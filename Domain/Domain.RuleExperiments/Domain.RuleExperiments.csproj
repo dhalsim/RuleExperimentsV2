@@ -67,6 +67,12 @@
     <Compile Include="Models\Log\Logs.cs" />
     <Compile Include="Attributes\Rule\BaseRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Attributes\StateMachine\StateMachineAttribute.cs" />
+    <Compile Include="Attributes\StateMachine\StartStateAttribute.cs" />
+    <Compile Include="Attributes\StateMachine\BaseStateAttribute.cs" />
+    <Compile Include="Attributes\StateMachine\StateAttribute.cs" />
+    <Compile Include="Attributes\StateMachine\ResetStateAttribute.cs" />
+    <Compile Include="Attributes\StateMachine\EndStateAttribute.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -77,4 +83,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="Attributes\StateMachine\" />
+  </ItemGroup>
 </Project>

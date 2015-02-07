@@ -7,20 +7,19 @@ using StateMachine;
 
 namespace IocContainer.RuleExperiments.HaveBox
 {
-    public static class Initializer
-    {
-        public static void Initialize()
-        {
-            var container = new Container();
-            container.Configure(config =>
-            {
-                config.For<IRuleProvider>().Use<StaticRuleProvider>();
-                config.For<IRuleProvider>().Use<BasicRuleProvider>();
-                config.For<ILogger>().Use<StaticLogger>().AsSingleton();
-                config.For<IStateMachine>().Use<SimpleStateMachine>().AsSingleton();
-            });
+	public static class Initializer
+	{
+		public static void Initialize()
+		{
+			var container = new Container();
+			container.Configure(config => {
+				config.For<IRuleProvider>().Use<StaticRuleProvider>();
+				config.For<IRuleProvider>().Use<BasicRuleProvider>();
+				config.For<ILogger>().Use<StaticLogger>().AsSingleton();
+				config.For<IStateMachine>().Use<SimpleStateMachine>().AsSingleton();
+			});
 
-            IocContainerFactory.Current = new IocContainerImplementation(container);
-        }
-    }
+			IocContainerFactory.Current = new IocContainerImplementation(container);
+		}
+	}
 }

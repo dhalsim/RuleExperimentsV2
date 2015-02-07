@@ -48,6 +48,7 @@
     <Compile Include="RuleProviders\StaticRuleProvider.cs" />
     <Compile Include="MethodDecoratorWeaverTestClasses\Classes.cs" />
     <Compile Include="Application\Flight\Flight.cs" />
+    <Compile Include="Application\Flight\IFlight.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\Domain.RuleExperiments\Domain.RuleExperiments.csproj">

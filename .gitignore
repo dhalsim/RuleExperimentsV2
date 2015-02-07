@@ -1,6 +1,6 @@
-/bin
-/obj
-/Debug
+bin/
+obj/
+Debug/
 
 # Windows image file caches
 Thumbs.db

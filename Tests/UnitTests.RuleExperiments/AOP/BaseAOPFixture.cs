@@ -3,6 +3,7 @@ using System.IO;
 using Mono.Cecil;
 using NUnit.Framework;
 using Weavers;
+using System.Reflection;
 
 namespace UnitTests.RuleExperiments.AOP
 {
@@ -14,7 +15,17 @@ namespace UnitTests.RuleExperiments.AOP
 		readonly string _upDirectory = Path.Combine("..", "..", "..", "..");
 		private const string DllName = "Application.RuleExperiments.dll";
 		private string _fullPath;
+
+		#if !__MonoCS__
 		private AppDomain _tempDomain;
+		
+
+
+
+
+#else
+		private static int typeCallCount = 0;
+		#endif
 
 		[TestFixtureSetUp]
 		public void Setup()
@@ -38,6 +49,18 @@ namespace UnitTests.RuleExperiments.AOP
 
 		protected virtual dynamic WriteAssemblyAndReadType(MethodDefinition method)
 		{
+			#if __MonoCS__
+				
+			string dllName = DllName.Replace(".dll", typeCallCount + ".dll");
+			string fullPath = Path.Combine(Directory.GetCurrentDirectory(), dllName);
+			typeCallCount++;
+
+			ModuleWeaver.ModuleDefinition.Assembly.Write(fullPath, new WriterParameters { WriteSymbols = true });
+			var assembly = Assembly.LoadFrom(fullPath);
+			var instanceOfMyType = (dynamic)assembly.CreateInstance(method.DeclaringType.FullName);
+
+			#else
+
 			// if appdomain exists, unload it
 			if (_tempDomain != null)
 				AppDomain.Unload(_tempDomain);
@@ -49,6 +72,7 @@ namespace UnitTests.RuleExperiments.AOP
 			_tempDomain = AppDomain.CreateDomain("myAppDomain", null, new AppDomainSetup { ApplicationBase = Directory.GetCurrentDirectory() });
 			var instanceOfMyType = (dynamic)_tempDomain.CreateInstanceFromAndUnwrap(fullPath, method.DeclaringType.FullName);
 
+			#endif
 			return instanceOfMyType;
 		}
 	}

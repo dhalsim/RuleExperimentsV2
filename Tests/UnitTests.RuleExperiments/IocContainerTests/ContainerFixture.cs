@@ -5,6 +5,7 @@ using Domain.RuleExperiments.ImplementationTypes;
 using Domain.RuleExperiments.Interfaces;
 using IocContainer.RuleExperiments.HaveBox;
 using NUnit.Framework;
+using StateMachine;
 
 namespace UnitTests.RuleExperiments.IocContainerTests
 {
@@ -47,6 +48,14 @@ namespace UnitTests.RuleExperiments.IocContainerTests
 			var logger = IocContainerFactory.Current.GetInstance<ILogger>("StaticLogger");
 			Assert.IsNotNull(logger);
 			Assert.IsInstanceOf<StaticLogger>(logger);
+		}
+
+		[Test]
+		public void Should_get_state_machine()
+		{
+			var stateMachine = IocContainerFactory.Current.GetInstance<IStateMachine>();
+			Assert.IsNotNull(stateMachine);
+			Assert.IsInstanceOf<IStateMachine>(stateMachine);
 		}
 	}
 }

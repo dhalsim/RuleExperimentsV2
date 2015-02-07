@@ -1,12 +1,45 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tests/UnitTests.RuleExperiments/AOP/BaseAOPFixture.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Weavers/ModuleWeaver.cs">
     <Files>
-      <File FileName="Tests/UnitTests.RuleExperiments/StateMachineTests/StateMachineFixture.cs" Line="45" Column="45" />
-      <File FileName="Libraries/StateMachine/BaseStateMachine.cs" Line="32" Column="32" />
-      <File FileName="Tests/UnitTests.RuleExperiments/AOP/BaseAOPFixture.cs" Line="15" Column="15" />
+      <File FileName="Tests/UnitTests.RuleExperiments/AOP/StateMachineWeaverFixture.cs" Line="3" Column="3" />
+      <File FileName="Weavers/ModuleWeaver.cs" Line="1" Column="1" />
+      <File FileName="Tests/UnitTests.RuleExperiments/AOP/TryCatchWeaverFixture.cs" Line="15" Column="15" />
+      <File FileName="Tests/UnitTests.RuleExperiments/AOP/BaseAOPFixture.cs" Line="22" Column="22" />
     </Files>
     <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Domain" expanded="True">
+            <Node name="Domain.RuleExperiments" expanded="True">
+              <Node name="Attributes" expanded="True">
+                <Node name="StateMachine" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+          <Node name="Implementations" expanded="True">
+            <Node name="Application.RuleExperiments" expanded="True">
+              <Node name="Application" expanded="True">
+                <Node name="Flight" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+          <Node name="Libraries" expanded="True">
+            <Node name="StateMachine" expanded="True" />
+            <Node name="Weavers" expanded="True">
+              <Node name="ModuleWeaver.cs" selected="True" />
+            </Node>
+          </Node>
+          <Node name="Tests" expanded="True">
+            <Node name="UnitTests.RuleExperiments" expanded="True">
+              <Node name="AOP" expanded="True" />
+              <Node name="CacherTests" expanded="True" />
+              <Node name="IocContainerTests" expanded="True" />
+              <Node name="StateMachineTests" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
       <Pad Id="MonoDevelop.NUnit.TestPad">
         <State expanded="True">
           <Node name="Tests" expanded="True">
@@ -14,7 +47,12 @@
               <Node name="UnitTests" expanded="True">
                 <Node name="RuleExperiments" expanded="True">
                   <Node name="AOP" expanded="True">
-                    <Node name="BaseAOPFixture" selected="True" />
+                    <Node name="TryCatchWeaverFixture" expanded="True">
+                      <Node name="Should_surround_method_with_try" selected="True" />
+                    </Node>
+                  </Node>
+                  <Node name="IocContainerTests" expanded="True">
+                    <Node name="ContainerFixture" expanded="True" />
                   </Node>
                   <Node name="StateMachineTests" expanded="True">
                     <Node name="StateMachineFixture" expanded="True" />
@@ -29,7 +67,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/ModuleWeaver.cs" line="52" column="1" />
+      <Breakpoint file="/Users/barisaydek/Projects/RuleExperimentsV2/Weavers/ModuleWeaver.cs" line="71" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -1,15 +1,15 @@
-﻿using System;
-using StateMachine;
-
-namespace Application.RuleExperiments.Application.Flight
+﻿namespace Application.RuleExperiments.Application.Flight
 {
-	public class Flight
+	public class Flight : IFlight
 	{
-		public IStateMachine StateMachine { get; set; }
-
-		public Flight (IStateMachine stateMachine)
+		public Flight ()
 		{
-			StateMachine = stateMachine;
+			this.Start();
+		}
+
+		public void Start()
+		{
+
 		}
 
 		public void Search()

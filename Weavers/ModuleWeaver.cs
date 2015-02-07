@@ -5,6 +5,8 @@ using Domain.RuleExperiments.Attributes;
 using Domain.RuleExperiments.Exceptions;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
+using System.Runtime.InteropServices;
+using Mono.Collections.Generic;
 
 namespace Weavers
 {
@@ -23,18 +25,35 @@ namespace Weavers
 			};
 		}
 
+		private Collection<TypeDefinition> Types { get; set; }
+
 		public void Execute()
 		{
-            
+			Types = new Collection<TypeDefinition>();
+			foreach (var type in ModuleDefinition.Types) {
+				Types.Add(type);
+			}
 		}
 
 		public List<TypeDefinition> GetTypesWithDecoratorAttribute<T>() where T : BaseAttribute
 		{
-            string decoratorType = typeof(T).Name;
+			string decoratorType = typeof(T).Name;
 
 			return ModuleDefinition.Types
                 .Where(t => t.CustomAttributes.Any(ca => ca.AttributeType.Name == decoratorType))
                 .ToList();
+		}
+
+		public List<TypeDefinition> GetTypesWithInterfaceDecoratorAttribute<T>() where T : BaseAttribute
+		{
+			string decoratorType = typeof(T).Name;
+
+			return Types
+				.Where(t => 
+					t.Interfaces.Any(i => 
+						i.Resolve().CustomAttributes.Any(ca => 
+							ca.AttributeType.Name == decoratorType)))
+				.ToList();
 		}
 
 		public List<MethodDefinition> GetMethodsWithDecoratorAttributeOfType<T>()
@@ -42,7 +61,7 @@ namespace Weavers
 			string decoratorType = typeof(T).Name;
 
 			return 
-                (from definitionType in ModuleDefinition.Types
+                (from definitionType in Types
 			              from method in definitionType.Methods
 			              where method.CustomAttributes.Any(ca => ca.AttributeType.Name == decoratorType)
 			              select method).ToList();
@@ -50,40 +69,40 @@ namespace Weavers
 
 		public ExceptionHandler CreateTryCatchBlock<T>(MethodDefinition method, string exceptionMessage)
 		{
-            method.Body.InitLocals = true;
-            var il = method.Body.GetILProcessor();
+			method.Body.InitLocals = true;
+			var il = method.Body.GetILProcessor();
             
-            // Obtain the exception class type through reflection with appropriate constructor
-            // Then import it to the target module
-            var reflectionType = typeof(T);
-            var exceptionCtor = reflectionType.GetConstructor(new Type[] { typeof(string), typeof(Exception) });
-            var constructorReference = ModuleDefinition.Import(exceptionCtor);
+			// Obtain the exception class type through reflection with appropriate constructor
+			// Then import it to the target module
+			var reflectionType = typeof(T);
+			var exceptionCtor = reflectionType.GetConstructor(new Type[] { typeof(string), typeof(Exception) });
+			var constructorReference = ModuleDefinition.Import(exceptionCtor);
             
-            // create instance with new
-            var exceptionInstance = il.Create(OpCodes.Newobj, constructorReference);
+			// create instance with new
+			var exceptionInstance = il.Create(OpCodes.Newobj, constructorReference);
 
-            // exception variable from catch statement
-            var exceptionVariable = new VariableDefinition("e", method.Module.Import(typeof(Exception)));
-            method.Body.Variables.Add(exceptionVariable);
+			// exception variable from catch statement
+			var exceptionVariable = new VariableDefinition("e", method.Module.Import(typeof(Exception)));
+			method.Body.Variables.Add(exceptionVariable);
 
-		    var last = method.Body.Instructions.Last();
-            Instruction tryEnd;
-            Instruction @throw = il.Create(OpCodes.Throw);
+			var last = method.Body.Instructions.Last();
+			Instruction tryEnd;
+			Instruction @throw = il.Create(OpCodes.Throw);
 
-            // this pattern lets you construct IL instructions without thinking reverse in stack
-            il.InsertAfter(last, tryEnd = last = il.Create(OpCodes.Stloc_S, exceptionVariable));    // store exception variable to local
-            il.InsertAfter(last, last = il.CreateLoadInstruction(exceptionMessage));                // load exception message string to the stack
-            il.InsertAfter(last, last = il.Create(OpCodes.Ldloc_S, exceptionVariable));             // load exception variable from local
-            il.InsertAfter(last, last = exceptionInstance);                                         // call constructor (uses these two variables from stack)
-		    il.InsertAfter(last, last = @throw);                                                    // throw that exception
-            il.InsertAfter(last, last = il.Create(OpCodes.Leave, @throw));                          // leave catch region
-            il.InsertAfter(last, il.Create(OpCodes.Ret));                                           // return void
+			// this pattern lets you construct IL instructions without thinking reverse in stack
+			il.InsertAfter(last, tryEnd = last = il.Create(OpCodes.Stloc_S, exceptionVariable));    // store exception variable to local
+			il.InsertAfter(last, last = il.CreateLoadInstruction(exceptionMessage));                // load exception message string to the stack
+			il.InsertAfter(last, last = il.Create(OpCodes.Ldloc_S, exceptionVariable));             // load exception variable from local
+			il.InsertAfter(last, last = exceptionInstance);                                         // call constructor (uses these two variables from stack)
+			il.InsertAfter(last, last = @throw);                                                    // throw that exception
+			il.InsertAfter(last, last = il.Create(OpCodes.Leave, @throw));                          // leave catch region
+			il.InsertAfter(last, il.Create(OpCodes.Ret));                                           // return void
 
 			return new ExceptionHandler(ExceptionHandlerType.Catch) {
 				TryStart = method.Body.Instructions.First(),
-                TryEnd = tryEnd,
-                HandlerStart = tryEnd,
-                HandlerEnd = last,
+				TryEnd = tryEnd,
+				HandlerStart = tryEnd,
+				HandlerEnd = last,
 				CatchType = ModuleDefinition.Import(typeof(Exception)),
 			};
 		}

@@ -39,13 +39,14 @@ namespace UnitTests.RuleExperiments.AOP
 		{
 			const string exceptionMessage = "System Level Exception Occureed.";
 
-			foreach (var method in ModuleWeaver.GetMethodsWithDecoratorAttributeOfType<TryCatchDecoratorAttribute>()) {
+			var methods = ModuleWeaver.GetMethodsWithDecoratorAttributeOfType<TryCatchDecoratorAttribute>();
+			for (int i = 0; i < methods.Count; i++) {
+				var method = methods[i];
 				string methodName = method.Name;
 				var exceptionHandler = ModuleWeaver.CreateTryCatchBlock<SystemLevelException>(method, exceptionMessage);
 				method.Body.ExceptionHandlers.Add(exceptionHandler);
 				ModuleWeaver.ModuleDefinition.Import(method);
 				var instanceOfMyType = WriteAssemblyAndReadType(method);
-
 				var exception = Assert.Throws<SystemLevelException>(() => {
 					if (methodName == "Test") {
 						instanceOfMyType.Test();
@@ -53,7 +54,6 @@ namespace UnitTests.RuleExperiments.AOP
 						instanceOfMyType.Test2();
 					}
 				});
-
 				Assert.AreEqual(exception.Message, exceptionMessage);
 			}
 		}

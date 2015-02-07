@@ -76,6 +76,7 @@
     <Compile Include="Interceptors\InvocationInterceptor.cs" />
     <Compile Include="IocContainerImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -88,6 +89,10 @@
     <ProjectReference Include="..\..\Implementations\Application.RuleExperiments\Application.RuleExperiments.csproj">
       <Project>{086BAC48-0DEE-43FC-A625-FCC36C2E07D9}</Project>
       <Name>Application.RuleExperiments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StateMachine\StateMachine.csproj">
+      <Project>{607503E5-64A9-46CA-B403-9B7FB6427CB8}</Project>
+      <Name>StateMachine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
