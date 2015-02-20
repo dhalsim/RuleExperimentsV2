@@ -65,6 +65,10 @@
     <Compile Include="AOP\TryCatchWeaverFixture.cs" />
     <Compile Include="CacherTests\CacheManagerFixture.cs" />
     <Compile Include="CacherTests\MemoryCacherFixture.cs" />
+    <Compile Include="DP\Client1.cs" />
+    <Compile Include="DP\Observer2Fixture.cs" />
+    <Compile Include="DP\ObserverFixture.cs" />
+    <Compile Include="DP\StrategyFixture.cs" />
     <Compile Include="IocContainerTests\ContainerFixture.cs" />
     <Compile Include="LoggerTests\StaticLoggerFixture.cs" />
     <Compile Include="Properties\Annotations.cs" />
@@ -114,7 +118,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <Folder Include="StateMachineTests\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

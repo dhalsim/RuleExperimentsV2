@@ -45,3 +45,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+*.suo
+*.user
+Tests/UnitTests.RuleExperiments/obj/Debug/UnitTests.RuleExperiments.dll
