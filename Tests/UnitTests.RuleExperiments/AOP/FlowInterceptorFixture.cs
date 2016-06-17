@@ -1,6 +1,4 @@
-﻿using Application.RuleExperiments.FlowLoggers;
-using Application.RuleExperiments.Loggers;
-using Domain.RuleExperiments;
+﻿using Domain.RuleExperiments;
 using Domain.RuleExperiments.Attributes.Rule;
 using Domain.RuleExperiments.ImplementationTypes;
 using Domain.RuleExperiments.Interfaces;
@@ -63,7 +61,6 @@ namespace UnitTests.RuleExperiments.AOP
             container.Configure(config =>
             {
                 config.For<ISearchFlight>().Use<AmadeusSearchFlight>().AndInterceptInstantiationWith<FlowInterceptor>();
-                config.For<IFlowLogger>().Use<StaticFlowLogger>().AsSingleton();
             });
 
             IocContainerFactory.Current = new IocContainerImplementation(container);

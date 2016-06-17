@@ -29,7 +29,7 @@ namespace HaveBox.Configuration
             {
                 typeDetails = CreateTypeDetails();
                 typeDetails.ImplementType = type;
-                typeDetails.DependenciesTypeDetails = new TypeDetails[typeDetails.ImplementType.GetAllConstructors().First().GetParameters().Count()];
+                typeDetails.DependenciesTypeDetails = new TypeDetails[typeDetails.ImplementType.GetConstructors().First().GetParameters().Count()];
 
                 _types.Add(typeDetails);
             }
@@ -58,7 +58,7 @@ namespace HaveBox.Configuration
 
         private static void CheckForMoreThanOneConstructorOnType(Type type)
         {
-            int constructorCount = type.GetAllConstructors().Count();
+            int constructorCount = type.GetConstructors().Length;
 
             if (constructorCount != 1)
             {

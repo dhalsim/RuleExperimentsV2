@@ -22,8 +22,7 @@ namespace UnitTests.RuleExperiments.AOP
 			ModuleWeaver = new ModuleWeaver();
 			DefaultAssemblyResolver assemblyResolver = new DefaultAssemblyResolver();
 
-			_directory = Path.Combine(Directory.GetCurrentDirectory(), _upDirectory, "Implementations",
-				"Application.RuleExperiments", "bin", "Debug");
+			_directory = @"C:\TestAssemblies";
 			assemblyResolver.AddSearchDirectory(_directory);
 			_fullPath = Path.Combine(_directory, DllName);
 
