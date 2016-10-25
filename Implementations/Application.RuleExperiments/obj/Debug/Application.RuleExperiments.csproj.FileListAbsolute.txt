@@ -5,3 +5,10 @@ C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Implemen
 C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Implementations\Application.RuleExperiments\obj\Debug\Application.RuleExperiments.csprojResolveAssemblyReference.cache
 C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Implementations\Application.RuleExperiments\obj\Debug\Application.RuleExperiments.dll
 C:\Users\BAydek\Documents\Visual Studio 2013\Projects\RuleExperimentsV2\Implementations\Application.RuleExperiments\obj\Debug\Application.RuleExperiments.pdb
+C:\Users\baydek\Documents\GitHub\RuleExperimentsV2\Implementations\Application.RuleExperiments\bin\Debug\Application.RuleExperiments.dll
+C:\Users\baydek\Documents\GitHub\RuleExperimentsV2\Implementations\Application.RuleExperiments\bin\Debug\Application.RuleExperiments.pdb
+C:\Users\baydek\Documents\GitHub\RuleExperimentsV2\Implementations\Application.RuleExperiments\bin\Debug\Domain.RuleExperiments.dll
+C:\Users\baydek\Documents\GitHub\RuleExperimentsV2\Implementations\Application.RuleExperiments\bin\Debug\Domain.RuleExperiments.pdb
+C:\Users\baydek\Documents\GitHub\RuleExperimentsV2\Implementations\Application.RuleExperiments\obj\Debug\Application.RuleExperiments.csprojResolveAssemblyReference.cache
+C:\Users\baydek\Documents\GitHub\RuleExperimentsV2\Implementations\Application.RuleExperiments\obj\Debug\Application.RuleExperiments.dll
+C:\Users\baydek\Documents\GitHub\RuleExperimentsV2\Implementations\Application.RuleExperiments\obj\Debug\Application.RuleExperiments.pdb

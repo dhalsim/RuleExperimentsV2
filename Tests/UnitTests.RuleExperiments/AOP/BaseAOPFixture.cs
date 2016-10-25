@@ -11,7 +11,6 @@ namespace UnitTests.RuleExperiments.AOP
 	{
 		protected ModuleWeaver ModuleWeaver;
 		private string _directory;
-		readonly string _upDirectory = Path.Combine("..", "..", "..", "..");
 		private const string DllName = "Application.RuleExperiments.dll";
 		private string _fullPath;
 		private AppDomain _tempDomain;
@@ -41,7 +40,7 @@ namespace UnitTests.RuleExperiments.AOP
 			if (_tempDomain != null)
 				AppDomain.Unload(_tempDomain);
 
-			string fullPath = Path.Combine(Directory.GetCurrentDirectory(), DllName);
+			string fullPath = Path.Combine(_directory, DllName.Replace(".dll", ".Weaved.dll"));
 			ModuleWeaver.ModuleDefinition.Assembly.Write(fullPath, new WriterParameters { WriteSymbols = true });
 
 			// create a new appdomain because we need to read the assembly multiple times for tests
